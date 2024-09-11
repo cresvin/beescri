@@ -20,6 +20,15 @@ export const router = createBrowserRouter([
           },
         ],
       },
+      {
+        path: "*",
+        async lazy() {
+          const { NotFound } = await import("../routes/not-found");
+          return {
+            Component: NotFound,
+          };
+        },
+      },
     ],
   },
 ]);
