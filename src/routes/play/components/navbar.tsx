@@ -28,11 +28,20 @@ export const Navbar = () => {
         <FormatButton />
         <ExportButton />
         <a
+          href="https://github.com/cresvin/beescri"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button variant="ghost" size="sm">
+            Github
+          </Button>
+        </a>
+        <a
           href="https://buymeacoffee.com/cresvinn"
           target="_blank"
           rel="noreferrer"
         >
-          <Button size="sm">Buy me a ☕</Button>
+          <Button size="sm">Buy me a coffee</Button>
         </a>
       </nav>
     </header>
