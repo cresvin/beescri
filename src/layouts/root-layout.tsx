@@ -5,7 +5,13 @@ export const RootLayout = () => {
   return (
     <>
       <Outlet />
-      <Toaster position="top-center" theme="dark" />
+      <Toaster
+        position="top-center"
+        theme="dark"
+        toastOptions={{
+          className: "bg-background border-border",
+        }}
+      />
     </>
   );
 };
