@@ -8,6 +8,12 @@ import {
 } from "@/components/ui/tooltip";
 import { useEditor } from "@/contexts/editor-context";
 import { saveAs } from "file-saver";
+import {
+  CoreBeautifyOptions,
+  css_beautify,
+  html_beautify,
+  js_beautify,
+} from "js-beautify";
 import JSZip from "jszip";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -19,6 +25,7 @@ export const Navbar = () => {
         <img src={beescriLogo} alt="Beescri" className="size-8" />
       </Link>
       <nav className="space-x-2">
+        <FormatButton />
         <ExportButton />
         <a
           href="https://buymeacoffee.com/cresvinn"
@@ -29,6 +36,28 @@ export const Navbar = () => {
         </a>
       </nav>
     </header>
+  );
+};
+
+const FormatButton = () => {
+  const { html, css, js, changeValue } = useEditor();
+
+  const handleFormat = () => {
+    const opts: CoreBeautifyOptions = {
+      indent_size: 2,
+    };
+
+    changeValue("html", html_beautify(html, opts));
+    changeValue("css", css_beautify(css, opts));
+    changeValue("js", js_beautify(js, opts));
+
+    toast.success("Formatted!");
+  };
+
+  return (
+    <Button onClick={handleFormat} size="sm" variant="ghost">
+      Format
+    </Button>
   );
 };
 
