@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/resizable";
 import { useEditor } from "@/contexts/editor-context";
 import { Editor } from "./components/editor";
+import { PanelHeader } from "./components/panel-header";
 import { Preview } from "./components/preview";
 
 export const Play = () => {
@@ -16,6 +17,7 @@ export const Play = () => {
         <ResizablePanel defaultSize={50}>
           <ResizablePanelGroup direction="vertical">
             <ResizablePanel defaultSize={50}>
+              <PanelHeader title="HTML" dotColor="#E44D26" />
               <Editor
                 language="html"
                 value={html}
@@ -24,6 +26,7 @@ export const Play = () => {
             </ResizablePanel>
             <ResizableHandle />
             <ResizablePanel defaultSize={50}>
+              <PanelHeader title="JS" dotColor="#F0DB4F" />
               <Editor
                 language="javascript"
                 value={js}
@@ -36,6 +39,7 @@ export const Play = () => {
         <ResizablePanel defaultSize={50}>
           <ResizablePanelGroup direction="vertical">
             <ResizablePanel defaultSize={50}>
+              <PanelHeader title="CSS" dotColor="#264de4" />
               <Editor
                 language="css"
                 value={css}
@@ -44,6 +48,7 @@ export const Play = () => {
             </ResizablePanel>
             <ResizableHandle />
             <ResizablePanel defaultSize={50}>
+              <PanelHeader title="Preview" />
               <Preview />
             </ResizablePanel>
           </ResizablePanelGroup>
