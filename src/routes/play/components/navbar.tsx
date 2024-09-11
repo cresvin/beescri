@@ -20,6 +20,13 @@ export const Navbar = () => {
       </Link>
       <nav className="space-x-2">
         <ExportButton />
+        <a
+          href="https://buymeacoffee.com/cresvinn"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button size="sm">Buy me a ☕</Button>
+        </a>
       </nav>
     </header>
   );
