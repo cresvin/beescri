@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/resizable";
 import { useEditor } from "@/contexts/editor-context";
 import { Editor } from "./components/editor";
+import { Navbar } from "./components/navbar";
 import { PanelHeader } from "./components/panel-header";
 import { Preview } from "./components/preview";
 
@@ -13,6 +14,7 @@ export const Play = () => {
 
   return (
     <div className="flex flex-col h-dvh">
+      <Navbar />
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel defaultSize={50}>
           <ResizablePanelGroup direction="vertical">
